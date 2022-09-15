@@ -52,14 +52,14 @@ router.put("/:id", async (req, res) => {
       where: {
         id: req.params.id,
       },
-    }),
+    });
     if (!tagData) {
-      res.status(404).json({message: "No tag found with that id"});
+      res.status(404).json({ message: "No tag found with that id" });
       return;
     }
     res.status(200).json(tagData);
-  } catch(err) {
-    res.status(500).json(err)
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
@@ -71,13 +71,13 @@ router.delete("/:id", async (req, res) => {
         id: req.params.id,
       },
     });
-    if (!tagData){
-      res.status(404).json({message: "No tag found with that id"});
+    if (!tagData) {
+      res.status(404).json({ message: "No tag found with that id" });
       return;
     }
     res.status(200).json(tagData);
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
 });
 
